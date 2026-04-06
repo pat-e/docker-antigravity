@@ -1,0 +1,13 @@
+services:
+  antigravity:
+    build: .
+    container_name: google-antigravity
+    environment:
+      - TZ=Europe/Berlin
+      - KEEP_APP_RUNNING=1
+    ports:
+      - "5800:5800"
+    volumes:
+      - /volume1/docker/antigravity/config:/config
+      - /volume1/docker/antigravity/workspace:/workspace
+    restart: unless-stopped
