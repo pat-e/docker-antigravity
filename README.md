@@ -1,7 +1,8 @@
 # Docker Antigravity
 
-Containerized deployment of the Google Antigravity application using Docker.
+Containerized deployment of the Google Antigravity application.
 
+Unlike standard CLI tool installations, this container provides the full Antigravity desktop GUI, running inside Docker and made entirely accessible via your web browser.
 ## Setup & Run
 
 1. Ensure Docker and Docker Compose are installed on your machine.
