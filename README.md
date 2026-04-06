@@ -26,6 +26,11 @@ Custom Environment Variables:
 - `TZ`: Set your timezone (default is `Europe/Berlin`).
 - `KEEP_APP_RUNNING`: Ensures the application stays running (default is `1`).
 
+## Acknowledgements
+
+- **Google Antigravity**: [https://antigravity.google/download/linux](https://antigravity.google/download/linux)
+- **Base Image**: This container relies heavily on the excellent [docker-baseimage-gui](https://github.com/jlesage/docker-baseimage-gui) by jlesage as its foundation.
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
