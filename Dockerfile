@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y \
     gnupg \
     libnss3 \
     libgbm1 \
-    libasound2 \
+    libasound2t64 \
     firefox \
     && mkdir -p /etc/apt/keyrings \
     && curl -fsSL "https://us-central1-apt.pkg.dev/doc/repo-signing-key.gpg" | gpg --dearmor -o /etc/apt/keyrings/antigravity-repo-key.gpg \
