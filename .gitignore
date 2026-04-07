@@ -1,0 +1,7 @@
+# Ignore Docker bind-mount volumes
+/config/
+/workspace/
+
+# Ignore OS-generated files
+.DS_Store
+Thumbs.db

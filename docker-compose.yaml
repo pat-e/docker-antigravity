@@ -1,6 +1,6 @@
 services:
   antigravity:
-    build: https://github.com/pat-e/docker-antigravity.git#master
+    image: ghcr.io/pat-e/docker-antigravity:latest
     container_name: google-antigravity
     environment:
       - TZ=Europe/Berlin
