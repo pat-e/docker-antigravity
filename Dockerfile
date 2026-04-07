@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
     apt-transport-https \
     curl \
     gnupg \
+    git \
     libnss3 \
     libgbm1 \
     libasound2t64 \
