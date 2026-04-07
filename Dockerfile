@@ -9,6 +9,8 @@ ENV KEEP_APP_RUNNING=1
 
 # Install dependencies, setup the apt repository, and install Antigravity
 RUN apt-get update && apt-get install -y \
+    ca-certificates \
+    apt-transport-https \
     curl \
     gnupg \
     libnss3 \
