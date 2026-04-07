@@ -26,5 +26,5 @@ RUN apt-get update && apt-get install -y \
 
 # Create the startup script with Electron CPU-rendering optimizations
 # The 'exec' command ensures the container supervisor can track and restart the app
-RUN echo "#!/bin/sh\nexec /usr/bin/antigravity --no-sandbox --disable-gpu --disable-software-rasterizer" > /startapp.sh && \
+RUN echo "#!/bin/sh\nexport HOME=/config\nexec /usr/bin/antigravity --no-sandbox --disable-gpu --disable-software-rasterizer --user-data-dir=/config/antigravity" > /startapp.sh && \
     chmod +x /startapp.sh
