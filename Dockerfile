@@ -28,5 +28,5 @@ RUN apt-get update && apt-get install -y \
 
 # Create the startup script with Electron CPU-rendering optimizations
 # The 'exec' command ensures the container supervisor can track and restart the app
-RUN echo "#!/bin/sh\nexport HOME=/config\nexport DONT_PROMPT_WSL_INSTALL=1\nexec /usr/share/antigravity/antigravity --no-sandbox --disable-gpu --disable-software-rasterizer --user-data-dir=/config/antigravity" > /startapp.sh && \
+RUN echo "#!/bin/sh\nexport HOME=/config\nexport DONT_PROMPT_WSL_INSTALL=1\nexec /usr/share/antigravity/antigravity --no-sandbox --disable-dev-shm-usage --disable-gpu --disable-software-rasterizer --user-data-dir=/config/antigravity" > /startapp.sh && \
     chmod +x /startapp.sh
