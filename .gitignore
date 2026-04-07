@@ -2,7 +2,26 @@
 /config/
 /workspace/
 
-# Ignore OS-generated files
+# Security, Credentials, and Environment setup
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+*.crt
+secret/
+secrets/
+
+# IDE and OS-generated files
+.vscode/
+.idea/
+*.swp
+*.swo
 .DS_Store
 Thumbs.db
+
+# Build logs and temporary files
 build.log
+test.gpg
+*.log
