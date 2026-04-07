@@ -3,6 +3,7 @@ FROM jlesage/baseimage-gui:ubuntu-24.04-v4
 
 # Set environment variables for the Web UI
 ENV APP_NAME="Google Antigravity"
+ENV SHELL=/bin/bash
 
 # Enable auto-restart if the app crashes or is accidentally closed
 ENV KEEP_APP_RUNNING=1
@@ -38,4 +39,5 @@ RUN apt-get update && apt-get install -y \
 # Create the startup script with Electron CPU-rendering optimizations
 # The 'exec' command ensures the container supervisor can track and restart the app
 RUN echo "#!/bin/sh\nexport HOME=/config\nexport DONT_PROMPT_WSL_INSTALL=1\nexec /usr/share/antigravity/antigravity --no-sandbox --disable-dev-shm-usage --disable-gpu --user-data-dir=/config/antigravity" > /startapp.sh && \
-    chmod +x /startapp.sh
+    chmod +x /startapp.sh && \
+    sed -i '/^app:/s#/sbin/nologin#/bin/bash#' /etc/passwd
