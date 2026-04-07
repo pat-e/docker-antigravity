@@ -16,12 +16,14 @@ RUN apt-get update && apt-get install -y \
     libnss3 \
     libgbm1 \
     libasound2t64 \
-    firefox \
     && mkdir -p /etc/apt/keyrings \
     && curl -fsSL "https://us-central1-apt.pkg.dev/doc/repo-signing-key.gpg" | gpg --dearmor -o /etc/apt/keyrings/antigravity-repo-key.gpg \
     && echo "deb [signed-by=/etc/apt/keyrings/antigravity-repo-key.gpg] https://us-central1-apt.pkg.dev/projects/antigravity-auto-updater-dev/ antigravity-debian main" | tee /etc/apt/sources.list.d/antigravity.list \
+    && curl -fsSL "https://packages.mozilla.org/apt/repo-signing-key.gpg" | gpg --dearmor -o /etc/apt/keyrings/packages.mozilla.org.gpg \
+    && echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.gpg] https://packages.mozilla.org/apt mozilla main" | tee /etc/apt/sources.list.d/mozilla.list \
+    && echo "Package: *\nPin: origin packages.mozilla.org\nPin-Priority: 1000" > /etc/apt/preferences.d/mozilla \
     && apt-get update \
-    && apt-get install -y antigravity \
+    && apt-get install -y antigravity firefox \
     && rm -rf /var/lib/apt/lists/*
 
 # Create the startup script with Electron CPU-rendering optimizations
